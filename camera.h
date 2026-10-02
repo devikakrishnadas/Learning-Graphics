@@ -1,5 +1,7 @@
 #pragma once
 
+#include "hittable.h"
+
 class camera {
 public:
   double aspect_ratio = 1.0; // Ratio of image width over height
@@ -69,7 +71,7 @@ private:
     }
 
     vec3 unit_direction = unit_vector(r.direction());
-    auto a = 0.5 * (1 + unit_direction.y());
+    auto a = 0.5 * (unit_direction.y() + 1.0);
     return (1.0 - a) * color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1.0);
   }
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 class interval {
+public:
     double min, max;
 
     interval() : min(+infinity), max(-infinity) {} //default empty
